@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "PT Sans", sans-serif;
+}
+
+#navbar {
+  height: 6vh;
+  background-color: #101820;
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+#navbar .container {
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+}
+
+#navbar .container .logo {
+  justify-self: start;
+  padding: 0.5em 0 0 0.5em;
+}
+
+h1 {
+  color: #f2aa4c;
+  text-transform: uppercase;
+  font-weight: bold;
+  letter-spacing: 0.2em;
+}
+
+a {
+  text-decoration: none;
+  color: #f2aa4c;
+}
+
+h2,
+h3,
+p {
+  color: #f2aa4c;
+}
+
+#navbar .container #searchbar {
+  justify-self: end;
+  align-self: center;
+  width: 80%;
+  height: 80%;
+  margin-top: 0.75em;
+  margin-right: 0.75em;
+  background: none;
+  opacity: 0.9;
+}
+
+#searchbar::placeholder {
+  font-family: "PT Sans", sans-serif;
+  font-size: 20px;
+}
+
+input[type="text"] {
+  color: #f2aa4c;
+  font-size: 20px;
+  font-family: "PT Sans", sans-serif;
+  font-weight: bold;
+  border: 1px solid rgba(155, 155, 155, 0.2);
+  border-radius: 10px;
+  padding: 0 10px;
+  outline: none;
+}
+
+section {
+  background: url("map.svg") no-repeat center center/cover;
+  background-attachment: fixed;
+}
+
+#output {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.country {
+  margin-top: 5vh;
+  width: 70%;
+  background-color: #101820;
+  border: 1px solid rgba(155, 155, 155, 0.2);
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas:
+    "name name name"
+    "native native native"
+    "capital flag languages"
+    "area region currency"
+    "population borders timezone"
+    "internet internet internet";
+  text-align: center;
+  border-radius: 10px;
+}
+
+.flag {
+  justify-self: center;
+  align-self: center;
+}
+
+.country > .name {
+  grid-area: name;
+}
+.country > .native {
+  grid-area: native;
+}
+.country > .capital {
+  grid-area: capital;
+}
+.country > .area {
+  grid-area: area;
+}
+.country > .population {
+  grid-area: population;
+}
+.country > .flag {
+  grid-area: flag;
+}
+.country > .region {
+  grid-area: region;
+}
+.country > .borders {
+  grid-area: borders;
+}
+.country > .languages {
+  grid-area: languages;
+}
+.country > .currency {
+  grid-area: currency;
+}
+.country > .timezone {
+  grid-area: timezone;
+}
+.country > .internet {
+  grid-area: internet;
+}
+
+.country > h1,
+.country > .native {
+  text-align: center;
+}
+
+.country:hover {
+  opacity: 0.9;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  #navbar {
+    height: 12vh;
+  }
+  #navbar .container {
+    display: flex;
+    flex-direction: column;
+  }
+  .logo {
+    text-align: center;
+  }
+}
