@@ -85,6 +85,7 @@ section {
 .country {
   margin-top: 5vh;
   width: 70%;
+  padding: 1%;
   background-color: #101820;
   border: 1px solid rgba(155, 155, 155, 0.2);
   display: grid;
@@ -153,9 +154,15 @@ section {
   cursor: pointer;
 }
 
+@media (max-width: 1025px) {
+  #navbar {
+    height: 10vh;
+  }
+}
+
 @media (max-width: 768px) {
   #navbar {
-    height: 12vh;
+    height: 14vh;
   }
   #navbar .container {
     display: flex;
@@ -164,4 +171,34 @@ section {
   .logo {
     text-align: center;
   }
+
+  .country {
+    display: grid;
+    gap: 1%;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(12, 1fr);
+    grid-template-areas:
+      "name"
+      "native"
+      "flag"
+      "region"
+      "borders"
+      "capital"
+      "area"
+      "population"
+      "languages"
+      "currency"
+      "timezone"
+      "internet";
+  }
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+::-webkit-scrollbar-track {
+  background-color: #101820;
+}
+::-webkit-scrollbar-thumb {
+  background-color: #f2aa4c;
 }
